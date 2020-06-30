@@ -1,0 +1,17 @@
+{
+  "name": "hacker-next",
+  "version": "1.0.0",
+  "description": "A Hacker news clone for next tutorial",
+  "main": "server.js",
+  "scripts": {
+    "dev": "next"
+  },
+  "author": "Shashank Agarwal",
+  "license": "ISC",
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "next": "^9.4.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
