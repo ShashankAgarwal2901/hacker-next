@@ -1,5 +1,18 @@
 import Link from "next/link";
 import Head from "next/head";
+import Router from "next/router";
+import NProgress from "nprogress";
+
+Router.onRouteChangeStart = () => {
+  NProgress.start();
+};
+
+Router.onRouteChangeComplete = () => {
+  NProgress.done();
+};
+Router.onRouteChangeError = () => {
+  NProgress.done();
+};
 
 const Layout = (props) => {
   return (
@@ -10,6 +23,11 @@ const Layout = (props) => {
       </Head>
       <div className="container">
         <nav>
+          {props.backButton && (
+            <span onClick={() => Router.back()} className="back-button">
+              &#x2b05;
+            </span>
+          )}
           <Link href="/">
             <a>
               <span className="main-title">Hacker next</span>
@@ -42,6 +60,11 @@ const Layout = (props) => {
 
             nav .main-title{
                 font-weight:bold;
+            }
+            nav .back-button{
+              font-size:1.3rem;
+              padding-right: 1em;
+              cursor:pointer;
             }
           `}</style>
 
